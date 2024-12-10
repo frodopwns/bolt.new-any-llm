@@ -87,6 +87,8 @@ export async function streamText(
 
   const dynamicMaxTokens = modelDetails && modelDetails.maxTokenAllowed ? modelDetails.maxTokenAllowed : MAX_TOKENS;
 
+  console.log('currentModel', currentModel);
+
   return _streamText({
     model: getModel(currentProvider, currentModel, env, apiKeys) as any,
     system: getSystemPrompt(),

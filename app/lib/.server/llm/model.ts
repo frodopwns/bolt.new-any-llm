@@ -83,6 +83,9 @@ export function getHuggingFaceModel(apiKey: OptionalApiKey, model: string) {
 }
 
 export function getOllamaModel(baseURL: string, model: string) {
+  console.log('baseURL', baseURL);
+  console.log('model', model);
+
   const ollamaInstance = ollama(model, {
     numCtx: DEFAULT_NUM_CTX,
   }) as LanguageModelV1 & { config: any };
